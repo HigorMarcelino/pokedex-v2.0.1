@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.e4ca0ee4.css",
-    "main.js": "/static/js/main.200e19cf.js",
-    "static/js/787.3384e316.chunk.js": "/static/js/787.3384e316.chunk.js",
-    "static/media/joystix.monospace-regular.otf": "/static/media/joystix.monospace-regular.28a69e86e377d611dcaf.otf",
-    "index.html": "/index.html",
-    "main.e4ca0ee4.css.map": "/static/css/main.e4ca0ee4.css.map",
-    "main.200e19cf.js.map": "/static/js/main.200e19cf.js.map",
-    "787.3384e316.chunk.js.map": "/static/js/787.3384e316.chunk.js.map"
+    "main.css": "/pokedex-v2.0.1/static/css/main.6c86dcbb.css",
+    "main.js": "/pokedex-v2.0.1/static/js/main.768f3c00.js",
+    "static/js/787.3384e316.chunk.js": "/pokedex-v2.0.1/static/js/787.3384e316.chunk.js",
+    "static/media/joystix.monospace-regular.otf": "/pokedex-v2.0.1/static/media/joystix.monospace-regular.28a69e86e377d611dcaf.otf",
+    "index.html": "/pokedex-v2.0.1/index.html",
+    "main.6c86dcbb.css.map": "/pokedex-v2.0.1/static/css/main.6c86dcbb.css.map",
+    "main.768f3c00.js.map": "/pokedex-v2.0.1/static/js/main.768f3c00.js.map",
+    "787.3384e316.chunk.js.map": "/pokedex-v2.0.1/static/js/787.3384e316.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e4ca0ee4.css",
-    "static/js/main.200e19cf.js"
+    "static/css/main.6c86dcbb.css",
+    "static/js/main.768f3c00.js"
   ]
 }
