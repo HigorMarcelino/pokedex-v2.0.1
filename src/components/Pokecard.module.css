@@ -1,0 +1,60 @@
+.card{
+    width: 200px;
+    height: 200px;
+    border: 7px #111 solid;
+    border-radius: 100%;
+    background: linear-gradient(
+        0deg,
+        #ffffffc5 0%,
+        #ffffffc5 50%,
+        #fb0d3dc5 50%,
+        #fb0d3ec5 100%
+    );
+    padding: 5px;
+    margin: auto;
+    position: relative;
+}
+
+.card::before, .btn, .btn::before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card::before{
+    content: "";
+    width: 101%;
+    background: #111;
+    height: 0.5em;
+}
+
+.btn{
+    background: #fff;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 100%;
+    border: 7px solid #111;
+}
+.btn:before{
+    content: '';
+    width: 1em;
+    height: 1em;
+    border-radius: 100%;
+    border: 3px solid #111;
+}
+.poketitle{
+    font-size: 13px;
+    color: #fff;
+    position: absolute; /* Add this */
+    top: 5%; /* Adjust this to position it where you want */
+    left: 50%;
+    transform: translateX(-50%);
+}
+.sprite{
+    width: 150px;
+    position: absolute;
+    left: 50%; 
+    top: 25%; 
+    transform: translateX(-50%);
+}

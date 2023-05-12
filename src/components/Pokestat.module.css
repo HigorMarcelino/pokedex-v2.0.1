@@ -1,0 +1,79 @@
+@font-face {
+    font-family: Joystix;
+    src: url("../../public/joystix.monospace-regular.otf") format("opentype");
+}
+main{
+    font-family: Joystix;
+    margin: 5% auto;
+    width: fit-content;
+}
+.statcontainer{
+    border: .3em red solid;
+    
+}
+.statscreen{
+    display: flex;
+}
+h1{
+    margin: 0 0 10px 0;
+    border-bottom: .1em red solid;
+}
+
+.statcontainerimg{
+    text-align: center;
+    border-right: .1em red solid;
+}
+.spritestat{
+    width: 300px;
+    margin: 5px;
+}
+
+.rotatebtn{
+    margin-top: -1px;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+}
+.rotatebtn img{
+    width: 55px;
+}
+.rotatebtn:hover{
+    cursor: pointer;
+}
+
+.stats{
+    width: 343px;
+    margin: 0 10px 0 10px;
+}
+.stats p{
+    margin-top: -8px;
+    display: flex;
+    justify-content: space-between;
+}
+.types{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.types p{
+    align-items: center;
+}
+
+.stats ul{
+    list-style-type: none;
+    padding: 0;
+    text-align: right;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: red;
+}
+
+.typeicon{
+    width: 50px;
+    margin-right: 5px;
+}

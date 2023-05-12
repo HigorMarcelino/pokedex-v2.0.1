@@ -1,0 +1,14 @@
+.pagecontainer{
+    text-align: center;
+}
+.pagination{
+    display: flex;
+    list-style-type: none;
+}
+.pagination_button{
+    margin: 0 5px 0 5px;
+}
+.pagination_button_active{
+    margin: 0 5px 0 5px;
+    color: red;
+}
