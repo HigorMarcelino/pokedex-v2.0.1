@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e4ca0ee4.css",
+    "main.js": "/static/js/main.200e19cf.js",
+    "static/js/787.3384e316.chunk.js": "/static/js/787.3384e316.chunk.js",
+    "static/media/joystix.monospace-regular.otf": "/static/media/joystix.monospace-regular.28a69e86e377d611dcaf.otf",
+    "index.html": "/index.html",
+    "main.e4ca0ee4.css.map": "/static/css/main.e4ca0ee4.css.map",
+    "main.200e19cf.js.map": "/static/js/main.200e19cf.js.map",
+    "787.3384e316.chunk.js.map": "/static/js/787.3384e316.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e4ca0ee4.css",
+    "static/js/main.200e19cf.js"
+  ]
+}
