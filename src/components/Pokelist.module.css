@@ -4,7 +4,6 @@
 }
 
 .pagecontainer{
-    max-height: 100vh;
     max-width: 100vw;
     text-align: center;
     background-image: url("/public/background.jpg");
