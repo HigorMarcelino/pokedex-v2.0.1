@@ -92,15 +92,15 @@ function Pokestat(){
                         <br/>
                         {hasBackSprite && 
                         <button onClick={handleRotate} className={styles.rotatebtn}>
-                            <img src="../rotate-icon.png" alt="rotate pokemon sprite button" ></img>
+                            <img src={process.env.PUBLIC_URL + "/rotate-icon.png"} alt="rotate pokemon sprite button" ></img>
                         </button>
                         }
                     </div>
                     <div className={styles.stats}>
                         <div className={styles.types}>
-                            <p><img src={"/types/"+types[0]+".png"} alt="type icon" className={styles.typeicon}/>{types[0]}</p>
+                            <p><img src={process.env.PUBLIC_URL + "/types/"+types[0]+".png"} alt="type icon" className={styles.typeicon}/>{types[0]}</p>
                             {types[1] &&
-                            <p><img src={"/types/"+types[1]+".png"} alt="type icon" className={styles.typeicon}/>{types[1]}</p>}
+                            <p><img src={process.env.PUBLIC_URL + "/types/"+types[1]+".png"} alt="type icon" className={styles.typeicon}/>{types[1]}</p>}
                         </div>
                         {stats &&
                         <>
