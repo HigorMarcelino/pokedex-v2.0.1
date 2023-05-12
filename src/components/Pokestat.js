@@ -81,10 +81,10 @@ function Pokestat(){
     }
 
     return(
-        <main>
-            <Link to={"/"} state={page}>BACK TO HOME</Link>   
+        <main>   
             <div className={styles.statcontainer}>
-                
+            <Link to={"/"} state={page}>BACK TO HOME</Link>
+                <div className={styles.statdata}>
                 <h1>#{num} - {name}</h1>
                 <div className={styles.statscreen}>
                     <div className={styles.statcontainerimg}>
@@ -124,6 +124,7 @@ function Pokestat(){
                             </p>
                         </>}
                     </div>
+                </div>
                 </div>
             </div>
         </main>
