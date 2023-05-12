@@ -5,8 +5,8 @@ function Poketable({ page }) {
 	return (
 		<>
 			<div className={styles.poketable}>
-				{[...Array(18)].map((_, index) => (
-					<Pokecard num={page * 18 - 18 + index + 1} key={index} page={page} />
+				{[...Array(24)].map((_, index) => (
+					<Pokecard num={page * 24 - 24 + index + 1} key={index} page={page} />
 				))}
 			</div>
 		</>

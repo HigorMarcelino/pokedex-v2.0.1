@@ -29,12 +29,12 @@ function Pokelist() {
     setCurrentPage(pageNumber);
   };
 
-  const totalPages = Math.ceil(totalPokemon / 18);
+  const totalPages = Math.ceil(totalPokemon / 24);
 
   const pageRange = () => {
     const pagesToShow = 10;
     const pageRange = [];
-    const totalPages = Math.ceil(totalPokemon / 18);
+    const totalPages = Math.ceil(totalPokemon / 24);
     let startPage, endPage;
 
     if (totalPages <= pagesToShow) {
@@ -62,6 +62,9 @@ function Pokelist() {
 
   return (
 <div className={styles.pagecontainer}>
+    <div className={styles.header}>
+      <img src="/logo.png" alt="pokemon logo" className={styles.logo} />
+    </div>
     <div className={styles.pokecontainer}>
       <Poketable page={currentPage}/>
     </div>

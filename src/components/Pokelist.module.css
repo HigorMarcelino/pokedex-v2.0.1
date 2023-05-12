@@ -1,14 +1,47 @@
-.pagecontainer{
-    text-align: center;
+@font-face {
+    font-family: Joystix;
+    src: url("../../public/joystix.monospace-regular.otf") format("opentype");
 }
+
+.pagecontainer{
+    max-height: 100vh;
+    max-width: 100vw;
+    text-align: center;
+    background-image: url("/public/background.jpg");
+    background-size: cover;
+}
+
+.header{
+    text-align: left;
+}
+
 .pagination{
+    
     display: flex;
     list-style-type: none;
 }
 .pagination_button{
-    margin: 0 5px 0 5px;
+    font-family: Joystix;
+    font-size: 1em;
+    background-color:rgba(0, 0, 0, 0.700);
+    border: none;
+    margin: 30px 5px 0 5px;
+    color: white;
 }
 .pagination_button_active{
-    margin: 0 5px 0 5px;
+    font-family: Joystix;
+    font-size: 1em;
+    background-color:rgba(0, 0, 0, 0.700);
+    border: none;
+    margin: 30px 5px 0 5px;
     color: red;
+}
+
+.pagination_button:hover, .pagination_button_active:hover{
+    cursor: pointer;
+    color: yellow;
+}
+
+.logo{
+    width: 23.4%;
 }
