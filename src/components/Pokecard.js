@@ -14,8 +14,15 @@ function Pokecard({num, page}){
             if (response.status === 200) {
               const data = await response.json();
               setName(data.name.toUpperCase());
-              setSpriteUrl(data.sprites["front_default"]);
               
+              const shiny = Math.random(1, 100);
+
+              setSpriteUrl(data.sprites["front_default"]);
+              if(data.sprites["front_shiny"]){
+                if(Math.ceil(shiny*100) === 21){
+                    setSpriteUrl(data.sprites["front_shiny"]);
+                  }
+              }
             }
           }
           fetchData();
