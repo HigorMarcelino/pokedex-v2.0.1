@@ -8,7 +8,7 @@ function Pokecard({num, page}){
     const [spriteUrl, setSpriteUrl] = useState();
     
     useEffect(() => {
-        setSpriteUrl("/pokeball.gif");
+      setSpriteUrl(process.env.PUBLIC_URL +"/pokeball.gif");
         async function fetchData() {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${num}`);
             if (response.status === 200) {

@@ -63,7 +63,7 @@ function Pokelist() {
   return (
 <div className={styles.pagecontainer}>
     <div className={styles.header}>
-      <img src="/logo.png" alt="pokemon logo" className={styles.logo} />
+      <img src={process.env.PUBLIC_URL +"/logo.png"} alt="pokemon logo" className={styles.logo} />
     </div>
     <div className={styles.pokecontainer}>
       <Poketable page={currentPage}/>
