@@ -14,7 +14,9 @@ function Pokestat(){
 
     const [spriteUrl, setSpriteUrl] = useState();
     const [hasBackSprite, setHasBackSprite] = useState(true);
+    const [hasGenderSprite, setHasGenderSprite] = useState(false);
     const [isRotated, setIsRotated] = useState(false);
+    const [isMale, setIsMale] = useState(false);
 
     const [unown, setUnown] = useState();
 
@@ -55,6 +57,9 @@ function Pokestat(){
               if(data.sprites["back_default"] === null){
                 setHasBackSprite(false);
               }
+              if(data.sprites["front_female"]){
+                setHasGenderSprite(true);
+              }
             }
           }
           fetchData();
@@ -66,17 +71,31 @@ function Pokestat(){
         if(isRotated){
             if(id === 201){
                 setSpriteUrl("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/201-"+unown+".png");
-            }else{
+            }else if(isMale){
                 setSpriteUrl("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+id+".png");
+            }else{
+                setSpriteUrl("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/"+id+".png");
             }
             setIsRotated(false);
         }else{
             if(id === 201){
                 setSpriteUrl("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/201-"+unown+".png");
-            }else{
+            }else if(isMale){
                 setSpriteUrl("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/"+id+".png");
+            }else{
+                setSpriteUrl("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/"+id+".png");
             }
             setIsRotated(true);
+        }
+    }
+
+    function handleGender(isMale){
+        if(isMale){
+            setIsMale(true);
+            setSpriteUrl("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+id+".png");
+        }else{
+            setIsMale(false);
+            setSpriteUrl("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/"+id+".png");
         }
     }
 
@@ -94,6 +113,16 @@ function Pokestat(){
                         <button onClick={handleRotate} className={styles.rotatebtn}>
                             <img src={process.env.PUBLIC_URL + "/rotate-icon.png"} alt="rotate pokemon sprite button" ></img>
                         </button>
+                        }
+                        {hasGenderSprite &&
+                        <div className={styles.types}>
+                            <button onClick={() => handleGender(true)} className={styles.rotatebtn}>
+                                <img src={process.env.PUBLIC_URL + "/forms/gender-m-black.png"} alt="switch pokemon sprite to male" ></img>
+                            </button>
+                            <button onClick={() => handleGender(false)} className={styles.rotatebtn}>
+                                <img src={process.env.PUBLIC_URL + "/forms/gender-f-black.png"} alt="switch pokemon sprite to female" ></img>
+                            </button>
+                        </div>
                         }
                     </div>
                     <div className={styles.stats}>

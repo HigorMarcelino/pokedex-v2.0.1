@@ -4,11 +4,11 @@ import styles from "./Pokecard.module.css";
 
 function Pokecard({ num, page }) {
   const [name, setName] = useState();
+  const [empty, setEmpty] = useState();
   const [spriteUrl, setSpriteUrl] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    //setSpriteUrl(process.env.PUBLIC_URL + "/pokeball.gif");
     setLoading(true);
 
     let isCurrent = true; // Unique identifier for the current fetch request
@@ -18,7 +18,6 @@ function Pokecard({ num, page }) {
       if (response.status === 200 && isCurrent) {
         const data = await response.json();
         setName(data.name.toUpperCase());
-        console.log(data.name + " - " + num);
         const shiny = Math.random(1, 100);
 
         setSpriteUrl(data.sprites["front_default"]);
@@ -27,7 +26,10 @@ function Pokecard({ num, page }) {
             setSpriteUrl(data.sprites["front_shiny"]);
           }
         }
-
+        setEmpty(false);
+        setLoading(false);
+      } else {
+        setEmpty(true);
         setLoading(false);
       }
     }
@@ -39,6 +41,32 @@ function Pokecard({ num, page }) {
     };
   }, [num]);
 
+  function renderCard() {
+      if (empty) {
+        return;
+      } else {
+        return (
+          <tbody className={styles.card}>
+            <tr className={styles.poketitle}>
+              <th id="name">
+                <Link to={"/pokemon/" + num} state={page} className={styles.link}>
+                  #{num} <br/>{name}
+                </Link>
+              </th>
+            </tr>
+            <tr className={styles.btn}></tr>
+            <tr>
+              <td id="sprite">
+                <Link to={"/pokemon/" + num} state={page} className={styles.link}>
+                  <img src={spriteUrl} alt="pokemon" className={styles.sprite} height="150"/>
+                </Link>
+              </td>
+            </tr>
+          </tbody>
+        );
+      }
+  }
+
   return (
     <>
       {loading ? (
@@ -47,24 +75,7 @@ function Pokecard({ num, page }) {
           <img src={process.env.PUBLIC_URL + "/pokeball.gif"} alt="loading" className={styles.sprite} />
         </div>
       ) : (
-        // Render the Pokecard with the fetched data
-        <tbody className={styles.card}>
-          <tr className={styles.poketitle}>
-            <th id="name">
-              <Link to={"/pokemon/" + num} state={page} className={styles.link}>
-                #{num} <br/>{name}
-              </Link>
-            </th>
-          </tr>
-          <tr className={styles.btn}></tr>
-          <tr>
-            <td id="sprite">
-              <Link to={"/pokemon/" + num} state={page} className={styles.link}>
-                <img src={spriteUrl} alt="pokemon" className={styles.sprite} />
-              </Link>
-            </td>
-          </tr>
-        </tbody>
+        renderCard()
       )}
     </>
   );
